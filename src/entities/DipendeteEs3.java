@@ -1,20 +1,22 @@
 package entities;
 import interfaces.CheckIn;
 
-public class Dipendete {
+import java.util.Scanner;
+
+public class DipendeteEs3 implements CheckIn {
     //attributes
     private String matricola;
     private Double stipendio;
     private Dipartimento dipartimento;
 
     //constructor
-    public Dipendete(String matricola, Double stipendio, Dipartimento dipartimento) {
+    public DipendeteEs3(String matricola, Double stipendio, Dipartimento dipartimento) {
         this.matricola =matricola;
         this.stipendio =stipendio;
         this.dipartimento =dipartimento;
-}
+    }
 
-//methods getter and setter
+    //methods getter and setter
     public String getMatricola() {
         return matricola;
     }
@@ -43,4 +45,11 @@ public class Dipendete {
                 '}';
     }
 
+    @Override
+    public void checkIn() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci l'orario di inzio: ");
+        int orarioInizio = scanner.nextInt();
+        System.out.println("matricola: " + matricola+ ", Stipendio: " + stipendio + ", Dipartimento: " + dipartimento + ", orario di inizio: " + orarioInizio);
+    }
 }

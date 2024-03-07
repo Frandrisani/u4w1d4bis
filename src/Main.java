@@ -1,4 +1,5 @@
 import entities.*;
+import interfaces.CheckIn;
 
 import java.util.Scanner;
 
@@ -40,13 +41,21 @@ public class Main {
                         break;
                     case 3:
                         //Esercizio 3
+                        Volontario volontario1 = new Volontario("123456", 20, "CV1");
+                        Volontario volontario2 = new Volontario("789101", 25, "CV2");
+                        DipendeteEs3 dipendente5 = new DipendeteEs3("123456", 1000.0, Dipartimento.PRODUZIONE);
+                        DipendeteEs3 dipendente6 = new DipendeteEs3("1123456", 800.0, Dipartimento.PRODUZIONE);
+                       ;
+                        CheckIn[] dipendentiw = { volontario1,  volontario2,  dipendente5, dipendente6};
+                        for (CheckIn dipendente : dipendentiw) {
+                            if (dipendente instanceof Volontario) {
+                                 ((Volontario) dipendente).checkIn();
+                            } else if (dipendente instanceof DipendeteEs3) {
+                                ((DipendeteEs3) dipendente).checkIn();
+                            }}
                         break;
                     default:
                         System.out.println("Errore!");
-
-                        //---------------------------------------------------------------
-
-                        //---------------------------------------------------------------
 
                 }
         }
