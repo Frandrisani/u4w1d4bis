@@ -4,13 +4,12 @@ public abstract class DipendenteAbstract {
 
     //attributes
     private String matricola;
-    private Double stipendio;
+
     private Dipartimento dipartimento;
 
     //constructor
-    public DipendenteAbstract(String matricola, Double stipendio, Dipartimento dipartimento) {
+    public DipendenteAbstract(String matricola, Dipartimento dipartimento) {
         this.matricola =matricola;
-        this.stipendio =stipendio;
         this.dipartimento =dipartimento;
     }
 
@@ -19,9 +18,7 @@ public abstract class DipendenteAbstract {
         return matricola;
     }
 
-    public Double getStipendio() {
-        return stipendio;
-    }
+
 
     public Dipartimento getDipartimento() {
         return dipartimento;
@@ -38,11 +35,11 @@ public abstract class DipendenteAbstract {
     public String toString() {
         return "Dipendete{" +
                 "matricola='" + matricola + '\'' +
-                ", stipendio=" + stipendio +
                 ", dipartimento=" + dipartimento +
                 '}';
     }
 
+    public abstract double calculateSalary();
 
 }
 
